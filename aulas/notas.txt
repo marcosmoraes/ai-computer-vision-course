@@ -1,0 +1,5 @@
+João: 8.5
+Maria: 9.0
+Pedro: 7.5
+Jony: 10.0
+Ana: 9.5
