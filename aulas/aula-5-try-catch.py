@@ -21,3 +21,13 @@ def dividir():
 
 #chamar a função dividir
 dividir()
+
+#Lendo um arquivo com segurança
+try:
+    with open("arquivo.txt", "r") as arquivo:
+        conteudo = arquivo.read()
+        print(conteudo)
+except FileNotFoundError:
+    print("O arquivo não foi encontrado!")
+except PermissionError:
+    print("Você não tem permissão para ler este arquivo!")

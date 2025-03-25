@@ -61,6 +61,24 @@ def calcular_medias(arquivo_notas, arquivo_medias):
                 media = sum(float(n) for n in notas) / len(notas)
                 medias.write(f"{nome}: {media:.2f}\n")
 
+#outra solução do exercicio 6
+def calcular_media(arquivo_origem, arquivo_destino):
+    with open(arquivo_origem, "r") as origem:
+        with open(arquivo_destino, "w") as destino:
+            for linha in origem:
+                nome, *notas = linha.strip().split(',')
+                nota_convertida = 0
+                print(type(notas))
+                for nota in notas:
+                    nota_convertida += float(nota)
+                    print(type(nota_convertida))
+                media = nota_convertida/len(notas)
+                print(media)
+                print(type(media))
+                destino.write(f"{nome}: {media:.2f}\n")
+
+calcular_media('notas.txt','notasfinal.txt')
+
 # 7. Organizador de Contatos
 def adicionar_contato(nome, telefone, email):
     with open('contatos.txt', 'a') as arquivo:
